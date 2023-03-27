@@ -1,11 +1,10 @@
 pipeline {
-    agent {
-        docker { image 'node' }
-    }
+    agent any
+    
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                echo "Hello from Jenkins!"
             }
         }
     }
