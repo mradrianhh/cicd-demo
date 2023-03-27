@@ -1,16 +1,12 @@
 pipeline {
-  agent {
-    node {
-      label 'docker-agent'
+    agent {
+        docker { image 'node:16.13.1-alpine' }
     }
-
-  }
-  stages {
-    stage('Print message') {
-      steps {
-        echo 'Started Jenkins Pipeline'
-      }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-
-  }
 }
